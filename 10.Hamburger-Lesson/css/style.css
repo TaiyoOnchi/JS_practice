@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+  margin: 50px 0;
+}
+.box {
+  height: 300px;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  background-color: #eee;
+}
+/* ---------------------------- */
+/* ---- ハンバーガーアイコン ---- */
+/* ---------------------------- */
+#hm-icon {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 10;
+}
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+.menu-trigger {
+  position: relative;
+  width: 50px;
+  height: 44px;
+}
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+}
+.menu-trigger span:nth-child(1) {
+  top: 0;
+}
+.menu-trigger span:nth-child(2) {
+  top: 20px;
+}
+.menu-trigger span:nth-child(3) {
+  bottom: 0;
+}
+
+/*activeクラスが追加されたときのハンバーガーアイコンの✕へ変形*/
+.menu-trigger.active span:nth-child(1) { /*ハンバーガーアイコンの一番上の線*/
+  /*translateY(20px)で、要素を垂直方向に20px移動させ、rotate(-45deg)で-45度回転させる*/
+  -webkit-transform: translateY(20px) rotate(-45deg);/*Safariや古いバージョンのChromeなどのWebKitブラウザ向けのベンダープレフィックス付きのプロパティ。*/
+  transform: translateY(20px) rotate(-45deg);/*標準的なプロパティ。*/
+  
+  background-color: #fff;/*背景色を白色*/
+}
+.menu-trigger.active span:nth-child(2) { /*ハンバーガーアイコンの真ん中の線*/
+  opacity: 0;/*要素の透明度を0に設定し、完全に見えなくする*/
+}
+.menu-trigger.active span:nth-child(3) { /*ハンバーガーアイコンの一番下の線*/
+  -webkit-transform: translateY(-20px) rotate(45deg);/*translateY(-20px)で、要素を垂直方向に-20px移動させ、rotate(45deg)で45度回転させます。*/
+  transform: translateY(-20px) rotate(45deg);
+  background-color: #fff;
+}
+/*ここまで*/
+
+
+/* ------------------------ */
+/* ------ spメニュー ------ */
+/* ------------------------ */
+/*初期状態では非表示*/
+#sp-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  color: #fff;
+  width: 100%;
+  min-height: 100%;
+  display: none;
+  z-index: 9;
+}
+#sp-menu li {
+  text-align: center;
+  margin-bottom: 30px;
+}
+#sp-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}

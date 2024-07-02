@@ -1,0 +1,11 @@
+/*スライド画像の幅と高さ*/
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+/*スライドショーのパーツ色の設定*/
+:root {
+  --swiper-navigation-color: #ffffff;
+  --swiper-pagination-color: #ffffff;
+}
